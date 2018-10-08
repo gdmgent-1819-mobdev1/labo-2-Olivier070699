@@ -63,6 +63,17 @@ function dislike(){
 	nextProfile();	
 };
 
+//SEE LIKES
+function seeLikes(){
+	let showLikeNames = localStorage.getItem('LIKES', JSON.stringify(likes));
+	document.getElementById('likeList').innerHTML = showLikeNames;
+};
+
+function seeDislikes(){
+	let showDislikeNames = localStorage.getItem('DISLIKE', JSON.stringify(likes));
+	document.getElementById('dislikelist').innerHTML = showDislikeNames;
+};
+
 
 
 
