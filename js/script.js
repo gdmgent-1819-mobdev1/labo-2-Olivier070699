@@ -9,10 +9,13 @@ function data(){
 	});
 };
 
+data();
+
 //Nieuw profiel tonen
 let nul=0;
 let active = '';
 function nextProfile(){
+	data();
     let newPerson = JSON.parse(localStorage.getItem('testObject'));
     active = newPerson.results[nul];
     showProfile(active);
@@ -74,8 +77,6 @@ function seeDislikes(){
 	let showDislikeNames = localStorage.getItem('DISLIKE', JSON.stringify(likes));
 	document.getElementById('dislikelist').innerHTML = showDislikeNames;
 };
-
-data();
 
 
 
