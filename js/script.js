@@ -69,10 +69,13 @@ function seeLikes(){
 	document.getElementById('likeList').innerHTML = showLikeNames;
 };
 
+//SEE DISLIKES
 function seeDislikes(){
 	let showDislikeNames = localStorage.getItem('DISLIKE', JSON.stringify(likes));
 	document.getElementById('dislikelist').innerHTML = showDislikeNames;
 };
+
+data();
 
 
 
