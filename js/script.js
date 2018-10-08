@@ -37,7 +37,7 @@ let fullName = showFName + ' ' + showLName;
 document.getElementById('name').innerHTML = showFName + ' ' + showLName;
 
 let showAge = gegevens.dob.age;
-document.getElementById('age').innerHTML = showAge;
+document.getElementById('age').innerHTML = 'Age: ' + showAge;
 
 let showLocation = gegevens.location.city;
 document.getElementById('place').innerHTML = showLocation;
