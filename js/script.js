@@ -6,6 +6,7 @@ function data(){
   .then(function(myJson) {
     // console.log(JSON.stringify(myJson));
     localStorage.setItem('testObject', JSON.stringify(myJson));
+    	
 	});
 };
 
@@ -16,7 +17,7 @@ data();
 let nul=0;
 let active = '';
 function nextProfile(){
-	data();
+
     let newPerson = JSON.parse(localStorage.getItem('testObject'));
     active = newPerson.results[nul];
     showProfile(active);
@@ -57,7 +58,7 @@ function like(){
 	likes.push(active.name.first + ' ' + active.name.last);
 	console.log('You like: ' + likes);
 	localStorage.setItem('LIKES', JSON.stringify(likes));
-	nextProfile();		
+	nextProfile();	
 }
 //DISLIKE
 function dislike(){
@@ -69,16 +70,49 @@ function dislike(){
 
 //SEE LIKES
 function seeLikes(){
-	let showLikeNames = localStorage.getItem('LIKES', JSON.stringify(likes));
-	document.getElementById('likeList').innerHTML = showLikeNames;
+	document.getElementById('likeList').innerHTML = '';
+	for (let i = 0; i < likes.length; i++) {
+		document.getElementById('likeList').innerHTML += '<li class="like">' + likes[i] + '</li>';
+	};
 };
 
 //SEE DISLIKES
 function seeDislikes(){
-	let showDislikeNames = localStorage.getItem('DISLIKE', JSON.stringify(likes));
-	document.getElementById('dislikelist').innerHTML = showDislikeNames;
+	document.getElementById('dislikelist').innerHTML = '';
+	for (let i = 0; i < dislikes.length; i++) {
+		document.getElementById('dislikelist').innerHTML += '<li class="dislike">' + dislikes[i] + '</li>';
+	};
 };
 
+// CLEAR LISTS
+function clearAll(){
+	document.getElementById('likeList').innerHTML = '';
+	document.getElementById('dislikelist').innerHTML = '';	
+}
+
+// LIKE NAAR DISLIKE
+for (let i = 0; i < likes.length; i++) {
+	let liLikes = document.getElementsByClassName('like');
+		liLikes[i].addEventListener("click", function(){
+			localStorage.setItem('DISLIKE', JSON.stringify(dislikes));
+			dislikes.push[i];
+			likes.splice(i, 1);
+			seeLikes();
+			seeDislikes();
+	})
+};
+
+// DISLIKE NAAR LIKE
+for (let i = 0; i < dislikes.length; i++) {
+		let liDislikes = document.getElementsByClassName('dislike');
+		liDislikes[i].addEventListener("click", function(){
+			localStorage.setItem('likes', JSON.stringify(likes));
+			likes.push[i];
+			dislikes.splice(i, 1);
+			seeLikes();
+			seeDislikes();
+	})
+};
 
 
 

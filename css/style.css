@@ -43,15 +43,21 @@ h2{
 	font-family: 'CRC65';
 }
 
-p{
+p, li{
 	text-transform: capitalize;
 	font-family: 'CRC35';
+	list-style-type: none;
+}
+
+li:hover{
+	opacity: 0.5;
+	cursor: pointer;
 }
 
 button{
 	width: 80px;
 	background-color: white;
-	margin: 0 25px 0 25px;
+	margin: 12.5px 25px 0 25px;
 	cursor: pointer;
 }
 
