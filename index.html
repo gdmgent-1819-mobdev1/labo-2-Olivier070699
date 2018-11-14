@@ -7,22 +7,22 @@
 <body>
 	<section>
 		<div id="app">
-			<div id="div"></div>
+			<div id="div" draggable="true"></div>
 			<h2 id="name"></h2>
 			<p id="age"></p>
 			<p id="place"></p>
+			<p id="away_from_you"></p>
 			<button onclick="like()"><img src="images/like.svg"> </button>
-			<button onclick="dislike()" id="dislike"><img src="images/kruisje.svg"></button>
+			<button onclick="dislike()" id="dislike"><img src="images/kruisje.svg"></button><br>
 		</div>
 	</section>
 
 	<section id="buttons">
-			<button onclick="seeLikes()">SEE LIKES</button>
+			<h3 id="likes"">LIKES</h3>
 			<ul id="likeList">
 			</ul>
-			<button onclick="seeDislikes()">SEE DISLIKES</button>
-			<ul id="dislikelist"></ul>
-			<button onclick="clearAll()">CLEAR LISTS</button>
+			<h3 id="dislikes">DISLIKES</h3>
+			<ul id="dislikeList"></ul>
 	</section>
 <script type="text/javascript" src="js/script.js"></script>
 </body>

@@ -38,7 +38,7 @@ section{
 	width: 100%;
 }
 
-h2{
+h2, h3{
 	text-transform: capitalize;
 	font-family: 'CRC65';
 }
@@ -71,4 +71,24 @@ button img{
 
 #buttons button{
 	width: 100px;
+}
+
+#likes{
+	color: #63bb91;
+	font-weight: bold;
+	margin-bottom: -6px;
+}
+
+#dislikes{
+	color: #ec6e70;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: -6px;
+}
+
+#mapje{
+	width: 800px;
+	height: 400px;
+	position: relative;
+	left: -100%;
 }
